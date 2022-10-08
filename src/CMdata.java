@@ -91,7 +91,6 @@ public class CMdata {
     //getLine--------------------------------------
     public Block getLine(int i){
         // pre: i < 8
-        System.out.println("getting line with i = " + i);
         int j = 0;
         for (int setN = 0; setN < data.length; setN++){
             for (int blockN = 0; blockN < data[0].getBlocksPerSet(); blockN++){

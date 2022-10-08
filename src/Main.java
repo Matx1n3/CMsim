@@ -53,9 +53,11 @@ public class Main {
                 System.out.println("|| 1.- Perform operation                                                               ||");
                 System.out.println("|| 2.- Print CM                                                                        ||");
                 System.out.println("|| 3.- Print MM                                                                        ||");
-                System.out.println("|| 4.- See Hit and Miss rates                                                          ||");
-                System.out.println("|| 5.- Restart                                                                         ||");
-                System.out.println("|| 6.- Exit                                                                            ||");
+                System.out.println("|| 4.- Print MM Cell                                                                   ||");
+                System.out.println("|| 5.- See Hit and Miss rates                                                          ||");
+                System.out.println("|| 6.- Show configuration                                                              ||");
+                System.out.println("|| 7.- Restart                                                                         ||");
+                System.out.println("|| 8.- Exit                                                                            ||");
                 System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
                 System.out.println("||                                 CHOOSE AN OPTION:                                   ||");
                 int option = sc.nextInt();
@@ -68,23 +70,33 @@ public class Main {
                         CM.printCM();
                         break;
                     case 3:
-                        MM.printMM();
+                        MM.printMM(sw);
                         break;
                     case 4:
-                        CM.seeHnMrates();
+                        System.out.println("|| 3.- Print MM                                                                        ||");
+                        System.out.println("|| Enter the address you wish to read from:                                            ||");
+                        int add = sc.nextInt();
+                        System.out.println("|| @"+add+" -> "+ MM.readFromAddress(add)+"                                                                            ||");
                         break;
                     case 5:
-                        restart = true;
+                        CM.seeHnMrates();
                         break;
                     case 6:
+                        System.out.println("|||||||||||||||||||||||||||||||||||||CONFIGURATION|||||||||||||||||||||||||||||||||||||||");
+                        System.out.println("||sw = "+sw+" | sb = "+sb+" | ss = "+ss+" | replacementPol = "+replacementPol+" | writeStrategy = "+writeStrategy+" | cacheUpdates = " + cmUpdates + "||");
+                        break;
+                    case 7:
+                        restart = true;
+                        break;
+                    case 8:
                         exit = true;
                         break;
                 }
             }
         }
-        System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||");
-        System.out.println("|| Exit...                                           ||");
-        System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+        System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+        System.out.println("|| Exit...                                                                             ||");
+        System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
     }
 
     private static void performOp(Scanner sc, CacheMemory CM){

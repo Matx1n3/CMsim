@@ -13,7 +13,7 @@ public class MainMemoryCell {
         //returns the data if the address is the same, -1 if it's not
     public int readCell (int address_in){
         if (address_in == address){
-            return byteData;  //Overflows can happen!
+            return byteData;
         }
         else {
             return -1;

@@ -3,22 +3,26 @@ public class MainMemory {
     private int numberOfCellsInMM;
 
     //Constructor------------------------------------------
-    public MainMemory(int sb, int sw){
+    public MainMemory(int sb, int sw) {
         numberOfCellsInMM = 8 * sw * sb;
-        MM = new MainMemoryCell[8*sw*sb];
-        for (int i = 0; i < MM.length; i++ ){
+        MM = new MainMemoryCell[8 * sw * sb];
+        for (int i = 0; i < MM.length; i++) {
             MM[i] = new MainMemoryCell(i, 6);
         }
     }
     //-----------------------------------------------------
 
     //printMM----------------------------------------------
-    public void printMM(){
-        for (int i = 0; i < MM.length; i++){
-            MM[i].printCell();
+    public void printMM(int sw) {
+        String word;
+        for (int i = 0; i < MM.length; i = i + sw) {
+            word = "";
+            for (int j = 0; j < sw; j++) {
+                word = word + "|| @" + (i+j) + " -> " + MM[i].readCell(i) + " || ";
+            }
+            System.out.println(word);
         }
-        //System.out.println("Done printing MM");
-        //System.out.println("Done printing MM");
+    //System.out.println("Done printing MM");
     }
 
     //readFromAddress--------------------------------------

@@ -173,8 +173,7 @@ public class CacheMemory {
             }
             else {  //WriteStrategy = Write Back
                 //Modify the block in CM -> dirty = 1
-
-                System.out.println("word = " + word + " + sb = " + sb + ", sw = " + sw);
+                //System.out.println("word = " + word + ", sb = " + sb + ", sw = " + sw);
                 cmdata.getLine(ans).getWord(Math.floorMod(word, sb/sw)).setByte(byteVar, val);   //Words/Line = sb/sw?
                 cmdirectory.getCell(ans).setDirty(true);
             }
