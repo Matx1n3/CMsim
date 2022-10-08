@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CMsimulator:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CMsimulator_jar</output-path>
+    <root id="archive" name="CMsimulator.jar">
+      <element id="module-output" name="CMsimulator" />
+    </root>
+  </artifact>
+</component>
